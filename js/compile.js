@@ -72,9 +72,9 @@ Compile.prototype = {
             // 如果是指令属性
             if (me.isDirective(attrName)) {
                 // 得到属性值(表达式)
-                var exp = attr.value;
+                var exp = attr.value; // test
                 // 从属性名中取出指令名
-                var dir = attrName.substring(2);
+                var dir = attrName.substring(2);  // on:click
                 // 如果是事件指令
                 if (me.isEventDirective(dir)) {
                     // 编译处理这个事件指令
@@ -172,9 +172,9 @@ var compileUtil = {
     // 事件指令处理
     eventHandler: function(node, vm, exp, dir) {
         // 根据指令名得到事件名/类型
-        var eventType = dir.split(':')[1],
+        var eventType = dir.split(':')[1],  // click
         // 根据表达式从methods中取出对应的事件回调函数
-            fn = vm.$options.methods && vm.$options.methods[exp];
+            fn = vm.$options.methods && vm.$options.methods[exp]; // test函数
         // 给当前节点绑定指定事件名和回调函数的DOM事件监听  回调函数指定this为vm
         if (eventType && fn) {
             node.addEventListener(eventType, fn.bind(vm), false);
