@@ -57,6 +57,19 @@
 
 ![响应式结构图](./images/响应式结构图.png)
 
+## 4. 数据双向绑定
+
+### 1) 相关理解
+
+- 以input中使用v-model来说: <input v-model="msg"/>
+- 从data到页面的绑定:  输入框是根据data中的msg做初始化显示和更新显示
+- 从页面到data绑定: 当输入发生改变时, 会自动的将输入的最新值自动保存到data的msg上
+
+### 2) 原理
+
+- 从data到页面的绑定: 内部给input指定了动态value为msg的值, 因为有单向数据绑定的存在, 一旦更新msg, 输入框就会自动 更新显示
+- 从页面到data绑定:内部给input绑定了input事件监听, 在回调函数中读取input最新的value值保存到data的msg属性上
+
 
 
 
