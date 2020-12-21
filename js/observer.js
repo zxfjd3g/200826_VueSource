@@ -61,7 +61,7 @@ var uid = 0;
 
 function Dep() {
     this.id = uid++;
-    this.subs = [];
+    this.subs = [];  // 包含所有对应的订阅者的数组
 }
 
 Dep.prototype = {
